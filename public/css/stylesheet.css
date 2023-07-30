@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+*{
+    font-family: 'Roboto', sans-serif;
+    margin: 0%;
+}
+
+/* navbar */
+.navbar nav div div ul li{
+    list-style-type: none;
+    display: flex;
+    flex-direction: row; 
+}
+
+.navbar nav div div ul li a{
+    text-decoration: none;
+    color: black;
+}
+
+.navbar nav div div ul li a:hover{
+    color: orange;
+}
+
+.navbar nav div div ul{
+    display: flex;
+    gap: 20px;       
+    height: 100%;
+    align-items: center;   
+}
+
+.navbar nav div{
+ background-color: lightgray;
+ height: 50px;          
+}
+
+.nav{
+display: flex; 
+justify-content: space-between;
+padding: 10px;
+
+}
+
+.contact-me{
+    display: flex;
+    gap: 10px;       
+    height: 100%;
+    align-items: center;
+    margin-right: 8%;  
+}
+
+
+.contact-me form button{
+    background-color: black;
+    padding: 5px;
+    border-radius: 10px;
+    border-style: none;
+    cursor: pointer;
+}
+
+.contact-me form button:hover{
+    background-color: orangered;
+}
+
+/* content */
+input{
+    background-color: lightgray;
+    padding-top: 10px ;
+    padding-bottom: 10px;
+    margin-right: -20px;
+    margin-left: -20px;
+    
+}
+input:hover{
+    cursor: pointer;
+}
+.form-message{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 300px;
+}
+.form-message div{
+    display: flex;
+    flex-direction: column;  
+    
+    padding: 10px 0px 0px 0px;   
+}
+
+.form-message div label{
+    font-weight: bold;
+    padding-top: 10px;
+}
+
+.container{
+    display:flex ; 
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+.git{
+    margin-top: 3%;
+    margin-bottom: 1%;
+}
+
+button{
+    margin-left: 50%;
+    font-size: 15pt;
+    width: 150px;
+    border-radius: 20px;
+    background-color: black;
+    color: white;
+    padding: 5px;
+    cursor: pointer;
+}
+button:hover{
+    background-color: orangered;
+}
+
+select:hover{
+cursor: pointer;
+}
+
+select{
+    padding: 5px;
+    margin-right: -20px;
+    margin-left: -20px;
+}
+
+textarea:hover{
+    cursor: pointer;
+}
+textarea{
+    margin-right: -20px;
+    margin-left: -20px;
+}
+
+label{
+    padding-bottom: 5px;
+}
+
+body:has(.git:hover){
+    background-image: url("logo.png" );
+    background-repeat: no-repeat;
+    background-size: 70% 70%;
+    background-position: center;
+  
+}
+
+.dumbs {
+
+    position: relative;
+    animation-name: example;
+    animation-duration: 4s;
+  }
+  
+  @keyframes example {
+    0%   {background-color:orange; left:0px; top:0px;}
+    25%  {background-color:yellow; left:100px; top:100pxpx;}
+    50%  {background-color:orange; left:100px; top:100px;}
+    75%  {background-color:gray; left:100px; top:100px;}
+    100% {background-color:yellow; left:0px; top:00px; }
+  }
+
+
+  .anime {
+    font-weight: bold;
+    position: relative;
+    animation: mymove 5s infinite;
+  }
+
+#div1 {animation-timing-function: linear;}
+#div2 {animation-timing-function: ease;}
+#div2 {animation-timing-function: ease-in;}
+#div4 {animation-timing-function: ease-out;}
+.anime {animation-timing-function: ease-in-out;}
+
+@keyframes mymove {
+    0%   {background-color:orange; left:0px; bottom:0px;}
+    25%  {background-color:yellow; left:30px; bottom:30px;}
+    50%  {background-color:orange; left:0px; bottom:0px;}
+}
+

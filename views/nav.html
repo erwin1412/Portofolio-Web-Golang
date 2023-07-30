@@ -1,0 +1,65 @@
+{{define "navigation"}}
+
+{{if .Username}}
+<nav class="navbar navbar-expand-lg navbar-light bg-light ">
+  <a class="navbar-brand" href="#">
+      <img src="../public/image/logo.png" width="50" height="30" alt="Logo">
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse text-center" id="navbarNav">
+      <ul class="navbar-nav">
+          <li class="nav-item active">
+              <a class="nav-link" href="/home">Home</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link active test2" href="/project">My Project</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link active test2" href="/testimonial">Testimonial</a>
+          </li>
+          <li class="nav-item active" >
+            <a class="nav-link" href="/logout">logout</a>
+          </li>
+      </ul>
+      <div class="nav-right ml-auto">
+
+        <h3>Welcome, {{.Username}}! </h3>
+        
+          <a class="nav-link btn rounded-pill contact-button" href="/contact" style="text-decoration: none; background-color:orange;  color:black;">Contact Me</a>
+      </div>
+  </div>
+</nav>
+{{ else }}
+<nav class="navbar navbar-expand-lg navbar-light bg-light ">
+<a class="navbar-brand" href="#">
+    <img src="../public/image/logo.png" width="50" height="30" alt="Logo">
+</a>
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse text-center" id="navbarNav">
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link active test2" href="/project">My Project</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active test2" href="/testimonial">Testimonial</a>
+        </li>
+        <li class="nav-item active" >
+          <a class="nav-link" href="/login">Login</a>
+        </li>
+    </ul>
+    <div class="nav-right ml-auto">
+
+  
+      
+        <a class="nav-link btn rounded-pill contact-button" href="/contact" style="text-decoration: none; background-color:orange;  color:black;">Contact Me</a>
+    </div>
+</div>
+</nav>
+{{end}}
+{{end}}

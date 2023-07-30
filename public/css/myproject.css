@@ -1,0 +1,183 @@
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+*{
+    font-family: 'Roboto', sans-serif;
+    margin: 0%;
+}
+
+
+
+.container{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+
+.form-message{
+    padding-top: 5%;
+}
+
+.git{
+    margin-top: 2%;
+    padding-left: 10%;
+}
+
+.form-message{
+    text-align: start;
+padding-left: 40%;
+}
+
+.tanggal13{
+    display: flex ;  
+    flex-direction: row;
+}
+/* atas kiri bawah kanan */
+.tanggal2{
+
+margin: 10px 100px 10px 0px;    
+ width: 100px;
+}
+
+.description{
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 10px;
+}
+.tech{
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+.checkbox1{
+    padding-bottom: 10px;
+}
+
+.project{
+    display: flex;
+  flex-direction: column;  
+  width: 400px;
+}
+
+input{
+    padding: 5px;
+    
+}
+textarea{
+    width: 400px;
+}
+.input-blog-image-group {
+    width: 400px;
+    font-size: 20px;
+    font-weight: 400;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    background: #f4f3f3;
+    border: 1px solid #c4c4c4;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  .input-blog-image-group label p {
+    font-size: 15px;
+  }
+  
+  .input-blog-image-group label {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .submit{
+    padding-left: 350px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+.buttons:hover{
+    cursor: pointer;
+}
+  .buttons{
+    padding: 10px;
+    border-radius: 10px;
+    background-color: black;
+    color: white;
+}
+
+.stgh{
+    background-color: white;
+}
+
+.navbar nav .nav div{
+    background-color: lightgray;
+}
+
+.navbar nav .nav{
+    background-color: lightgray;
+}
+
+.containerproject div{
+    margin-top: 50px;
+    background-color: lightgray;
+}
+
+
+
+  a:link { text-decoration: none; }
+
+
+  @media only screen and (max-width: 600px) {
+    body{
+        width: 100%;
+    }
+    .form-message{
+       
+        padding-left: 2%;
+        
+    }
+    hr{
+        padding-left: 8%;
+    }
+    .containerprojec{
+        
+        background-color: lightgray;
+    }
+    #input-name{
+        width: 80%;
+    }
+    #input-description {
+        width: 88%;
+    }
+    .image-1{
+        width: 80%;
+    }
+    .imagess{
+        width:100%;
+    }
+    .submit{
+    padding-left: 80%;        
+    }
+    hr{
+        width: 95%;
+    }   
+    .grid-container {
+        display: grid;
+        grid-template-columns: auto;
+        gap: 5px;
+        padding: 10px;
+        margin-left: 10px;
+      }
+      .grid-item {
+        background-color: rgba(255, 255, 255, 0.8);
+        border: 1px solid rgba(0, 0, 0, 0.8);
+        width:90%;
+        padding: 0%;
+      }        
+      .grid-item a img{
+        width: 95%;
+      }
+}

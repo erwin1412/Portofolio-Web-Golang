@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="../public/css/stylesheet.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <!-- nav.js -->
+    {{template "navigation" .}}
+
+
+    <div class="container">
+        <div class="git">
+          <h1 class="anime">GET IN TOUCH</h1>
+        </div>
+        <form action="" class="form-message">
+          <div class="form-group">
+            <label for="input-name" class="anim">Name</label>
+            <input type="text" class="form-control" id="input-name">
+          </div>
+      
+          <div class="form-group">
+            <label for="input-email" class="anim">Email</label>
+            <input type="email" class="form-control" id="input-email">
+          </div>
+      
+          <div class="form-group">
+            <label for="input-phone" class="anim">Phone Number</label>
+            <input type="tel" class="form-control" id="input-phone">
+          </div>
+      
+          <div class="form-group">
+            <label for="input-subject" class="anim">Subject</label>
+            <select class="form-control" id="input-subject">
+              <option value="">Pilih Subject</option>
+              <option value="Front End Developer">Front End Developer</option>
+              <option value="Back End Developer">Back End Developer</option>
+              <option value="Fullstack Developer">Fullstack Developer</option>
+            </select>
+          </div>
+      
+          <div class="form-group">
+            <label for="input-message" class="anim">Your Message</label>
+            <textarea class="form-control" id="input-message" rows="5"></textarea>
+          </div>
+      
+          <div class="submit">
+            <button type="button" class="btn btn-primary" id="submit" onclick="submitData(event)">Submit</button>
+          </div>
+        </form>
+      </div>
+      
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="../public/js/contact.js"></script>
+    <script src="../public/js/nav.js"></script>
+</body>
+
+</html>

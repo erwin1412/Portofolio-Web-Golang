@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="../public/css/blog.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+      /* CSS to truncate text */
+      .card-text.truncate {
+          overflow: hidden;
+          text-overflow: ellipsis;
+          display: -webkit-box;
+          -webkit-line-clamp: 2; /* Number of lines to show before truncating */
+          -webkit-box-orient: vertical;
+      }
+  </style>
+
+</head>
+<body class="" style="background-color: rgb(218, 208, 208);">
+
+    <!-- nav.js -->
+    {{template "navigation" .}}
+    
+    <!-- Blog -->
+  <!-- Form -->
+  <div class="container mt-5">
+    <div class="row">
+  <!-- First Card -->
+
+  {{ range .Projects }}
+<div class="col-md-4 mb-2">
+  <div class="card" style="height: 100%;">
+    <img src="../public/image/{{ .ImagePath }}" class="card-img-top" alt="Image 1" style="height: 200px;">
+
+    <div class="card-body" >
+      <a href="/detail/{{ .ID }}" class="card-title-link">
+        <h5 class="card-title">{{ .Title }} </h5>
+      </a>
+      <p class="card-text truncate">{{ .Content }}</p>
+      <p class="card-text"><h3 class="text-muted">Sudah Berlalu : {{ .PostDate }} </h3><h3 class="text-right"> {{ .Author }}</h3></p>
+      {{ range .Technologies }}
+      <i class="{{ . }}"></i>
+      {{ end }}
+    </div>
+  </div>
+</div>
+
+  {{ end }}
+</div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.1/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

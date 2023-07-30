@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+.add-blog-button {
+    margin-top: 50px;
+    text-align: end;
+    margin-right: 120px;
+}
+
+.add-blog-button a.btn {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #fff;
+    background-color: #f44336;
+    border: none;
+    border-radius: 50px;
+    transition: background-color 0.3s;
+}
+
+.add-blog-button a.btn:hover {
+    background-color: #ff5722;
+}
+</style>
+
+
+</head>
+<body class="" style="background-color: rgb(218, 208, 208);">
+
+    <!-- nav.js -->
+    {{template "navigation" .}}
+    <br>
+
+    <!-- index.js -->
+    <div id="cardContainer"></div>
+
+
+
+
+    
+
+    <!-- Blog -->
+  <!-- Form -->
+  {{if .Username}}
+  <div style="margin-top: 50px; text-align:end; margin-right: 120px;">
+    <a href="/myproject"
+      style="background-color: orangered; padding: 10px 20px; color: white; text-decoration: none">Add
+      Blog</a>
+  </div>
+  {{ end }}
+  
+  <div class="container mt-5">
+    <div class="row">
+  <!-- First Card -->
+
+  {{if .Username}}
+  {{ range .Projects }}
+<div class="col-md-4 mb-2">
+  <div class="card" style="height: 100%;">
+    <img src="../public/image/{{ .ImagePath }}" class="card-img-top" alt="Image 1" style="height: 200px;">
+
+    <div class="card-body" >
+      <a href="/detail/{{ .ID }}" class="card-title-link">
+        <h5 class="card-title">{{ .Title }} </h5>
+      </a>
+      <p class="card-text truncate">{{ .Content }}</p>
+      <p class="card-text"><h3 class="text-muted">Sudah Berlalu : {{ .PostDate }} </h3><h3 class="text-right"> {{ .Author }}</h3></p>
+      {{ range .Technologies }}
+      <i class="{{ . }}"></i>
+      {{ end }}
+
+      <div class="text-right">
+        <a href="/edit/{{ .ID }}" class="btn btn-primary">Edit</a>
+        
+        <form action="/delete/{{.ID}}" method="POST" style="display: inline;">
+          <button type="submit" class="btn btn-danger">Delete</button>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</div>
+{{ end }}
+
+  {{ else }}
+  {{ end }}
+</div>
+  </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  
+    <script src="../public/js/index.js"></script>
+</body>
+</html>

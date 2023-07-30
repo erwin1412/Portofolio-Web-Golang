@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Project</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        .grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 5px;
+    padding: 10px;
+    margin-left: 10px;
+  }
+  .grid-item {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+    width: 300px;
+  }
+
+
+  @media only screen and (max-width: 600px) {
+    .grid-container {
+        display: grid;
+        grid-template-columns: auto;
+        gap: 5px;
+        padding: 10px;
+        margin-left: 10px;
+      }
+      .grid-item {
+        background-color: rgba(255, 255, 255, 0.8);
+        border: 1px solid rgba(0, 0, 0, 0.8);
+        width:90%;
+        padding: 0%;
+      }        
+}
+
+
+    </style>
+</head>
+<body class="" style="background-color: rgb(218, 208, 208);">
+    <!-- nav.js -->
+    {{template "navigation" .}}
+
+    
+
+<div class="">
+  <div class="stgh">
+      <div class="git">
+          <h1 class="text-center">ADD MY PROJECT</h1>
+      </div>
+      <div class="container d-flex justify-content-center">  
+        <form class="form-message w-50" action="/add-project" method="POST" enctype="multipart/form-data" onsubmit="return validateFileFormat()">
+
+
+
+              <div class="form-group">
+                  <label for="input-name">Project Name</label>
+                  <input type="text" class="form-control" name="title">
+              </div>
+
+              <div class="form-row">
+                  <div class="form-group col-md-6">
+                      <label for="input-start">Start Date</label>
+                      <input type="date" class="form-control" name="start">
+                  </div>
+
+                  <div class="form-group col-md-6">
+                      <label for="input-end">End Date</label>
+                      <input type="date" class="form-control" name="end">
+                  </div>
+              </div>
+
+              <div class="form-group">
+                  <label for="input-description">Description</label>
+                  <textarea class="form-control" name="content" rows="5"></textarea>
+              </div>
+
+        
+              <div class="form-group">
+                <label for="Technologies">Technologies:</label>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" name="tech[]" value="fab fa-node">
+                    <label class="form-check-label" for="checkbox1">Node.js</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" name="tech[]" value="fab fa-node-js">
+                    <label class="form-check-label" for="checkbox2">Next.js</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" name="tech[]" value="fab fa-java">
+                    <label class="form-check-label" for="checkbox2">React.js</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" name="tech[]" value="fab fa-react">
+                    <label class="form-check-label" for="checkbox3">TypeScript</label>
+                </div>
+                <!-- Add more checkboxes for other technologies -->
+            </div>
+
+
+              <label class="mr-3">Upload Image</label><br>
+              <div class="form-group d-flex align-items-center">
+                  <div class="input-blog-image-group w-100" style="border: 1px solid black;">
+                      <label for="input-blog-image" class="d-flex align-items-center justify-content-between">
+                          <p class="m-0">Attach File</p>
+                          <img src="../public/image/file.png" alt="file" />
+                      </label>
+                      <!-- Update the name attribute to "image" -->
+                      <input type="file" id="input-blog-image" name="image" hidden />
+                  </div>
+              </div>
+
+              <div class="form-group">
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+          </form>
+      </div>
+  </div>
+</div>
+
+<script>
+  function validateFileFormat() {
+    const fileInput = document.getElementById("input-blog-image");
+    const file = fileInput.files[0];
+
+    const allowedExtensions = [".jpg", ".jpeg", ".png"];
+    const fileExtension = file.name.substr(file.name.lastIndexOf("."));
+
+    if (!allowedExtensions.includes(fileExtension.toLowerCase())) {
+      alert("File format not supported. Only JPG, JPEG, and PNG files are allowed.");
+      return false; // Prevent form submission
+    }
+
+    return true; // Allow form submission
+  }
+</script>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="../public/js/project.js"></script>
+    <script src="../public/js/nav.js"></script>
+</body>
+
+</html>

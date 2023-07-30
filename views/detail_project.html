@@ -1,0 +1,101 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detail Project</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+  <!-- Font Awesome CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+  <!-- Your custom CSS file (if any) -->
+  <link rel="stylesheet" href="../public/css/detailblog.css">
+
+</head>
+<body class="" style="background-color: rgb(218, 208, 208);">
+
+<!-- Navigation Start -->
+
+    <!-- nav.js -->
+    {{template "navigation" .}}
+
+<!-- Navigation End -->
+<section>
+  <h1 class="text-center" style="margin-bottom: 50px; margin-top: 10px;">{{ .Project.Title }}</h1>
+  <div class="container" style="background-color: white;">
+    <div class="row">
+      <div class="col-sm img-content image-left">
+        <img src="../public/image/{{ .Project.ImagePath }}" alt="img-detail" class="img-fluid" />
+      </div>
+      <div class="col-sm detail-content">
+        <p class="title">Duration</p>
+        <div class="duration">
+          <div class="date">
+            <i class="fa-solid fa-calendar-days"></i>
+            <span>{{ .Project.StartDate }} - {{ .Project.EndDate }}</span>
+          </div>
+          <div class="time">
+            <i class="fa-solid fa-clock"></i>
+            <span>{{ .Project.PostDate }}</span>
+          </div>
+        </div>
+        <p class="title">Technologies</p>
+        <div class="technologies">
+          <div class="left">
+            {{ range .Project.Technologies }}
+            <i class="{{ . }}"></i>
+            {{ end }}
+          </div>
+        </div>
+        <!-- Add margin or padding class to create space -->
+        <p class="mb-4">Some content here</p>
+      </div>
+    </div>
+    <div class="container">
+      <div class="description-content">
+        {{ .Project.Content }}
+      </div>
+    </div>   <!-- Move description-content here, outside of main-content -->
+  </div>
+
+
+</section>
+
+
+<style>
+  .image-left {
+    text-align: center;
+    margin-right: 0;
+  }
+</style>
+    <!-- Bootstrap and other JS scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Your custom JS file (if any) -->
+
+</body>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="../public/css/detailblog.css" />
+
+    <!-- Font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <title>Detail Blog</title>
+  </head>
+</html>
